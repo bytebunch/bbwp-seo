@@ -1,0 +1,19 @@
+.bytebunch_seo_meta_box_container .row
+{
+   margin-bottom: 20px;
+}
+.clearboth
+{
+   clear: both;
+}
+.bytebunch_seo_meta_box_container .form-label
+{
+   float:left;
+   width: 20%;
+}
+.bytebunch_seo_meta_box_container .form-field
+{
+   float: left;
+   width:70%;
+   padding-left: 10%;
+}
