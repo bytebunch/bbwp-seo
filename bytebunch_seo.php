@@ -6,31 +6,75 @@ Description: It's time to have a good and fast SEO plugin for wordpress.
 Version: 1.0
 Author: Tahir
 Author URI: http://community.bytebunch.com
+License: GPL2
+
 */
 
 
-/**
- * Adds a meta box to the post editing screen
- */
-
-
-define('BYTEBUNCH_SEO','bytebunch_seo');
+define('BYTEBUNCH_SEO','bytebunch_seo_');
 define('BBSEO_URL',plugins_url().'/bytebunch-seo');
 define('BBSEO_ABS',plugin_dir_path(dirname(__FILE__) ).'/bytebunch-seo');
 
-
-function bytebunch_seo_wp_admin_style_scripts() {
-   wp_register_style( 'bytebunch_seo_wp_admin_css', BBSEO_URL . '/css/admin.css', false, '1.0.0' );
-   wp_enqueue_style( 'bytebunch_seo_wp_admin_css' );
-   
-   wp_register_script( 'bytebunch_seo_wp_admin_script', BBSEO_URL . '/js/admin.js', array('jquery'), '1.0.0' );
-   wp_enqueue_script( 'bytebunch_seo_wp_admin_script' );
+function db_plugin($array_value){
+   echo '<pre>';
+   print_r($array_value);
+   echo '</pre>';
 }
-add_action( 'admin_enqueue_scripts', 'bytebunch_seo_wp_admin_style_scripts' );
 
 
-include_once BBSEO_ABS.'/admin/meta_box_fields.php';
-include_once BBSEO_ABS.'/admin/taxonomy_meta_fields.php';
+
+include_once BBSEO_ABS.'/admin/classes/bytebunch_seo.php';
+include_once BBSEO_ABS.'/admin/classes/bytebunch_seo_setting.php';
+
+if(is_admin()){
+   include_once BBSEO_ABS.'/admin/classes/meta_box_fields.php';
+   include_once BBSEO_ABS.'/admin/classes/taxonomy_meta_fields.php';
+}
+
+
+
+
+
+
+/* add main menu page in wordpress dashboard */
+add_action( 'admin_menu', 'bytebunch_seo_main_admin_menu_page' );
+function bytebunch_seo_main_admin_menu_page(){
+	add_menu_page( 'ByteBunch SEO title', 'ByteBunch SEO', 'manage_options', 'bbseo_dashboard', 'bytebunch_seo_main_admin_menu_page_content', 'dashicons-chart-bar', 87.4); 
+}
+function bytebunch_seo_main_admin_menu_page_content(){
+}
+
+/* add sub menu in our wordpress dashboard main menu */
+add_action('admin_menu', 'bytebunch_seo_submenu_page_title_and_meta');
+function bytebunch_seo_submenu_page_title_and_meta() {
+	add_submenu_page( 'bbseo_dashboard', 'Titles & Metas - ByteBunch SEO', 'Titles & Metas', 'manage_options', 'bbseo_dashboard', 'bytebunch_seo_submenu_page_title_and_meta_content' );
+}
+function bytebunch_seo_submenu_page_title_and_meta_content() {
+	include_once BBSEO_ABS.'/admin/page_titles_and_metas.php';
+}
+
+/* add sub menu in our wordpress dashboard main menu */
+add_action('admin_menu', 'bytebunch_seo_submenu_page_social');
+function bytebunch_seo_submenu_page_social() {
+	add_submenu_page( 'bbseo_dashboard', 'Social - ByteBunch SEO', 'Social', 'manage_options', 'bbseo_social', 'bytebunch_seo_submenu_page_social_content' );
+}
+function bytebunch_seo_submenu_page_social_content() {
+	include_once BBSEO_ABS.'/admin/page_social.php';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
