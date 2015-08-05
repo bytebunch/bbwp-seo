@@ -5,13 +5,13 @@ if(!class_exists('bytebunch_seo')){
    class bytebunch_seo{
       
       /*variable $option_name is our option table database key and also our form input array */
-      protected $option_name = 'bytebunch_seo';
+      //protected $option_name = 'bytebunch_seo';
       
       /* all our plugin config data is in our data veribable */
-      protected $data = array();
+      protected static $data = array();
       
       public function __construct(){
-         $this->data = get_option($this->option_name);
+         self::$data = get_option(BYTEBUNCH_SEO);
          add_action( 'admin_enqueue_scripts', array($this,'wp_admin_style_scripts') );
       }
       

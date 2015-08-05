@@ -9,6 +9,8 @@
 .clearboth
 {
    clear: both;
+   margin:0px;
+   padding:0px;
 }
 .bytebunch_seo_meta_box_container .form-label
 {
@@ -21,21 +23,26 @@
    width:70%;
    padding-left: 5%;
 }
-.bytebunch_seo_meta_box_container .tab_menu_content
+.bytebunch_seo_meta_box_container .tab_menu_content, .setting_pages_content_wrapper .tab_menu_content
 {
    display: none;
 }
+.bytebunch_seo_meta_box_container .current-content-cantainer, .setting_pages_content_wrapper .current-content-cantainer
+{
+   display:block;
+}
 .bytebunch_seo_meta_box_container div.current-content-cantainer
 {
-	display:block;
+	
    padding:20px 15px 15px 15px;
    border: 1px solid #ddd;
    background-color: #FDFDFD;
 }
-.bytebunch_seo_meta_box_container ul.tabbed_menu
+.bytebunch_seo_meta_box_container ul.tabbed_menu, .setting_pages_content_wrapper ul.tabbed_menu
 {
    margin:0px;
    padding:0px;
+   list-style-type: none;
 }
 .bytebunch_seo_meta_box_container ul.tabbed_menu li
 {
@@ -70,4 +77,59 @@
 .bytebunch_seo_meta_box_container .form-field .bytebunch_seo_image_upload_input
 {
    width: 50%;
+}
+.bytebunch_seo_container ul.tabbed_menu li
+{
+   height: 50px;
+   display: block;
+   margin: 0px 5px 0px;
+   float: left;
+}
+.bytebunch_seo_container ul.tabbed_menu li a
+{
+   color: #555;
+   font-weight: bold;
+   display: block;
+   margin: 0px;
+   float: left;
+   height: 48px;
+   line-height: 48px;
+   padding:0 15px;
+   font-size: 14px;
+   text-decoration: none;
+   background-color: #e4e4e4;
+   border: 1px solid #ccc;
+}
+.bytebunch_seo_container ul.tabbed_menu li a:hover
+{
+   background-color: #fff;
+}
+.bytebunch_seo_container ul.tabbed_menu li.current-menu-item a
+{
+   height: 49px;
+   background-color: #f1f1f1;
+   border-bottom: 1px solid #f1f1f1;
+   color: #000;
+}
+.bytebunch_seo_container .row
+{
+   margin-bottom: 20px;
+   margin-top: 20px;
+}
+.bytebunch_seo_container .field_label
+{
+   float:left;
+   width: 180px;
+   margin-right:20px;
+   padding-top:5px;
+}
+.bytebunch_seo_container .field_input
+{
+   float: left;
+}
+.bytebunch_seo_container input[type='text'], .bytebunch_seo_container textarea
+{
+   padding:5px;
+   margin:0px;
+   width:400px;
 }

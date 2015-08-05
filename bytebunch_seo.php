@@ -11,7 +11,7 @@ License: GPL2
 */
 
 
-define('BYTEBUNCH_SEO','bytebunch_seo_');
+define('BYTEBUNCH_SEO','bytebunch_seo');
 define('BBSEO_URL',plugins_url().'/bytebunch-seo');
 define('BBSEO_ABS',plugin_dir_path(dirname(__FILE__) ).'/bytebunch-seo');
 
@@ -30,50 +30,6 @@ if(is_admin()){
    include_once BBSEO_ABS.'/admin/classes/meta_box_fields.php';
    include_once BBSEO_ABS.'/admin/classes/taxonomy_meta_fields.php';
 }
-
-
-
-
-
-
-/* add main menu page in wordpress dashboard */
-add_action( 'admin_menu', 'bytebunch_seo_main_admin_menu_page' );
-function bytebunch_seo_main_admin_menu_page(){
-	add_menu_page( 'ByteBunch SEO title', 'ByteBunch SEO', 'manage_options', 'bbseo_dashboard', 'bytebunch_seo_main_admin_menu_page_content', 'dashicons-chart-bar', 87.4); 
-}
-function bytebunch_seo_main_admin_menu_page_content(){
-}
-
-/* add sub menu in our wordpress dashboard main menu */
-add_action('admin_menu', 'bytebunch_seo_submenu_page_title_and_meta');
-function bytebunch_seo_submenu_page_title_and_meta() {
-	add_submenu_page( 'bbseo_dashboard', 'Titles & Metas - ByteBunch SEO', 'Titles & Metas', 'manage_options', 'bbseo_dashboard', 'bytebunch_seo_submenu_page_title_and_meta_content' );
-}
-function bytebunch_seo_submenu_page_title_and_meta_content() {
-	include_once BBSEO_ABS.'/admin/page_titles_and_metas.php';
-}
-
-/* add sub menu in our wordpress dashboard main menu */
-add_action('admin_menu', 'bytebunch_seo_submenu_page_social');
-function bytebunch_seo_submenu_page_social() {
-	add_submenu_page( 'bbseo_dashboard', 'Social - ByteBunch SEO', 'Social', 'manage_options', 'bbseo_social', 'bytebunch_seo_submenu_page_social_content' );
-}
-function bytebunch_seo_submenu_page_social_content() {
-	include_once BBSEO_ABS.'/admin/page_social.php';
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -150,4 +106,3 @@ if(!is_admin()){
       echo $output;
    }
 }
-
