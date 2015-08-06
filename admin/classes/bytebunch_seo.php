@@ -12,10 +12,14 @@ if(!class_exists('bytebunch_seo')){
       
       public function __construct(){
          self::$data = get_option(BYTEBUNCH_SEO);
+         
          add_action( 'admin_enqueue_scripts', array($this,'wp_admin_style_scripts') );
       }
       
       public function wp_admin_style_scripts() {
+         
+         wp_enqueue_script('uploads');
+         wp_enqueue_media();
          
          wp_register_style( BYTEBUNCH_SEO.'_wp_admin_css', BBSEO_URL . '/css/admin.css', false, '1.0.0' );
          wp_enqueue_style( BYTEBUNCH_SEO.'_wp_admin_css' );

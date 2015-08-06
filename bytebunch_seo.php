@@ -76,7 +76,6 @@ if(!is_admin()){
          $bb_seo_temp_data = get_post_meta($post->ID,BYTEBUNCH_SEO.'_focuskw',true);
          if(!empty($bb_seo_temp_data)) $seo_keywords = $bb_seo_temp_data;
       }
-      
       $output .= $start_meta_comments;
       if(empty($seo_description))
          $seo_description = "ByteBunch Blog is all about design, development, ideas, web trends, technology and tutorials";

@@ -133,3 +133,30 @@
    margin:0px;
    width:400px;
 }
+.bytebunch_seo_container .title_separator .radio
+{
+   display: none;
+   float: left;
+   width: 0!important;
+   min-width: 0!important;
+   opacity: 0;
+}
+.bytebunch_seo_container .title_separator label
+{
+   float: left;
+   width: 30px!important;
+   margin: 3px 3px 0 0;
+   padding: 5px 8px;
+   border: 1px solid #ccc;
+   font-family: Arial,Helvetica,sans-serif!important;
+   font-size: 18px!important;
+   line-height: 25px;
+   text-align: center;
+   cursor: pointer;
+   display: block;
+}
+.bytebunch_seo_container .title_separator input.radio:checked+label {
+    border: 1px solid green;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px green;
+}
