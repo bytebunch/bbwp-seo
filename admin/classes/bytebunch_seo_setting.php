@@ -39,28 +39,6 @@ if(!class_exists('bytebunch_seo_setting')){
       
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       public function admin_init() {
          
          /* // White list our options using the Settings API

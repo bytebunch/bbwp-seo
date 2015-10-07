@@ -34,9 +34,9 @@ if(!class_exists('taxonomy_meta_fields')){
                <p class="description">For what? This is already obsolete by google since 2009. We recommend that you do not put anything here that because the google search engine may penalize you.</p>
             </div>
          </div>
-            <?php 
+
+            <?php
       }
-      
       // Edit term page
       public function taxonomy_edit_meta_field($term) {
 

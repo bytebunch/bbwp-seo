@@ -8,14 +8,26 @@ if(!class_exists('bytebunch_seo')){
       //protected $option_name = 'bytebunch_seo';
       
       /* all our plugin config data is in our data veribable */
-      protected static $data = array();
+      private static $data = array();
       
       public function __construct(){
          self::$data = get_option(BYTEBUNCH_SEO);
          
-         add_action( 'admin_enqueue_scripts', array($this,'wp_admin_style_scripts') );
+         if(is_admin()){
+            add_action( 'admin_enqueue_scripts', array($this,'wp_admin_style_scripts') );
+         }
       }
       
+      // get options values from static data array
+      protected function get_option($key){
+         if(isset(self::$data[$key])){
+            return self::$data[$key];
+         }else{
+            return '';
+         }
+      }
+
+
       public function wp_admin_style_scripts() {
          
          wp_enqueue_script('uploads');

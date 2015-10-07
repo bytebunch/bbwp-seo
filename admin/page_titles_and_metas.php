@@ -22,7 +22,7 @@
                   <label for="<?php echo BYTEBUNCH_SEO; ?>[title_home]">Title template:</label>
                </div>
                <div class="field_input">
-                  <input type="text" name="<?php echo BYTEBUNCH_SEO; ?>[title_home]" id="<?php echo BYTEBUNCH_SEO; ?>[title_home]" value="<?php if(isset(parent::$data['title_home'])){echo parent::$data['title_home'];}else{echo '{site_name} {sep} {site_description}';} ?>" />
+                  <input type="text" name="<?php echo BYTEBUNCH_SEO; ?>[title_home]" id="<?php echo BYTEBUNCH_SEO; ?>[title_home]" value="<?php if($this->get_option('title_home')){echo $this->get_option('title_home');}else{echo '{site_name} {sep} {site_description}';} ?>" />
                </div>
                <div class="clearboth"></div>
             </div><!-- row div end here-->
@@ -31,7 +31,7 @@
                   <label for="<?php echo BYTEBUNCH_SEO; ?>[desc_home]">Meta description template:</label>
                </div>
                <div class="field_input">
-                  <textarea name="<?php echo BYTEBUNCH_SEO; ?>[desc_home]" id="<?php echo BYTEBUNCH_SEO; ?>[desc_home]" cols="45" rows="5"><?php if(isset(parent::$data['desc_home'])){echo parent::$data['desc_home'];} ?></textarea>
+                  <textarea name="<?php echo BYTEBUNCH_SEO; ?>[desc_home]" id="<?php echo BYTEBUNCH_SEO; ?>[desc_home]" cols="45" rows="5"><?php echo $this->get_option('desc_home'); ?></textarea>
                </div>
                <div class="clearboth"></div>
             </div><!-- row div end here-->
@@ -52,7 +52,7 @@
                   <label for="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $post_type; ?>]">Title template:</label>
                </div>
                <div class="field_input">
-                  <input type="text" name="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $post_type; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $post_type; ?>]" value="<?php if(isset(parent::$data['title_'.$post_type])){echo parent::$data['title_'.$post_type];}else{echo '{title} {sep} {site_name}';} ?>" />
+                  <input type="text" name="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $post_type; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $post_type; ?>]" value="<?php if($this->get_option('title_'.$post_type)){echo $this->get_option('title_'.$post_type);}else{echo '{title} {sep} {site_name}';} ?>" />
                </div>
                <div class="clearboth"></div>
             </div><!-- row div end here-->
@@ -61,7 +61,7 @@
                   <label for="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $post_type; ?>]">Meta description template:</label>
                </div>
                <div class="field_input">
-                  <textarea name="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $post_type; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $post_type; ?>]" cols="45" rows="5"><?php if(isset(parent::$data['desc_'.$post_type])){echo parent::$data['desc_'.$post_type];} ?></textarea>
+                  <textarea name="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $post_type; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $post_type; ?>]" cols="45" rows="5"><?php echo $this->get_option('desc_'.$post_type); ?></textarea>
                </div>
                <div class="clearboth"></div>
             </div><!-- row div end here-->
@@ -83,7 +83,7 @@
                   <label for="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $taxonomy; ?>]">Title template:</label>
                </div>
                <div class="field_input">
-                  <input type="text" name="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $taxonomy; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $taxonomy; ?>]" value="<?php if(isset(parent::$data['title_'.$taxonomy])){echo parent::$data['title_'.$taxonomy];}else{echo '{term_title} {sep} {site_name}';} ?>" />
+                  <input type="text" name="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $taxonomy; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $taxonomy; ?>]" value="<?php if($this->get_option('title_'.$taxonomy)){echo $this->get_option('title_'.$taxonomy);}else{echo '{term_title} {sep} {site_name}';} ?>" />
                </div>
                <div class="clearboth"></div>
             </div><!-- row div end here-->
@@ -92,7 +92,7 @@
                   <label for="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $taxonomy; ?>]">Meta description template:</label>
                </div>
                <div class="field_input">
-                  <textarea name="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $taxonomy; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $taxonomy; ?>]" cols="45" rows="5"><?php if(isset(parent::$data['desc_'.$taxonomy])){echo parent::$data['desc_'.$taxonomy];} ?></textarea>
+                  <textarea name="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $taxonomy; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $taxonomy; ?>]" cols="45" rows="5"><?php echo $this->get_option('desc_'.$taxonomy); ?></textarea>
                </div>
                <div class="clearboth"></div>
             </div><!-- row div end here-->
@@ -115,7 +115,7 @@
                   <label for="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $archive_template[1]; ?>]">Title template:</label>
                </div>
                <div class="field_input">
-                  <input type="text" name="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $archive_template[1]; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $archive_template[1]; ?>]" value="<?php if(isset(parent::$data['title_'.$archive_template[1]])){echo parent::$data['title_'.$archive_template[1]];}else{echo $archive_template[2];} ?>" />
+                  <input type="text" name="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $archive_template[1]; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $archive_template[1]; ?>]" value="<?php if($this->get_option('title_'.$archive_template[1])){echo $this->get_option('title_'.$archive_template[1]);}else{echo $archive_template[2];} ?>" />
                </div>
                <div class="clearboth"></div>
             </div><!-- row div end here-->
@@ -124,7 +124,7 @@
                   <label for="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $archive_template[1]; ?>]">Meta description template:</label>
                </div>
                <div class="field_input">
-                  <textarea name="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $archive_template[1]; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $archive_template[1]; ?>]" cols="45" rows="5"><?php if(isset(parent::$data['desc_'.$archive_template[1]])){echo parent::$data['desc_'.$archive_template[1]];} ?></textarea>
+                  <textarea name="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $archive_template[1]; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $archive_template[1]; ?>]" cols="45" rows="5"><?php echo $this->get_option('desc_'.$archive_template[1]); ?></textarea>
                </div>
                <div class="clearboth"></div>
             </div><!-- row div end here-->
@@ -147,7 +147,7 @@
                   <label for="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $archive_template[1]; ?>]">Title template:</label>
                </div>
                <div class="field_input">
-                  <input type="text" name="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $archive_template[1]; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $archive_template[1]; ?>]" value="<?php if(isset(parent::$data['title_'.$archive_template[1]])){echo parent::$data['title_'.$archive_template[1]];}else{echo $archive_template[2];} ?>" />
+                  <input type="text" name="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $archive_template[1]; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[title_<?php echo $archive_template[1]; ?>]" value="<?php if($this->get_option('title_'.$archive_template[1])){echo $this->get_option('title_'.$archive_template[1]);}else{echo $archive_template[2];} ?>" />
                </div>
                <div class="clearboth"></div>
             </div><!-- row div end here-->
@@ -156,7 +156,7 @@
                   <label for="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $archive_template[1]; ?>]">Meta description template:</label>
                </div>
                <div class="field_input">
-                  <textarea name="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $archive_template[1]; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $archive_template[1]; ?>]" cols="45" rows="5"><?php if(isset(parent::$data['desc_'.$archive_template[1]])){echo parent::$data['desc_'.$archive_template[1]];} ?></textarea>
+                  <textarea name="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $archive_template[1]; ?>]" id="<?php echo BYTEBUNCH_SEO; ?>[desc_<?php echo $archive_template[1]; ?>]" cols="45" rows="5"><?php echo $this->get_option('desc_'.$archive_template[1]); ?></textarea>
                </div>
                <div class="clearboth"></div>
             </div><!-- row div end here-->
@@ -186,7 +186,7 @@
                   'sc-lt' => '<',
                   'sc-gt' => '>',
                   );
-                  if(isset(parent::$data['title_separator'])){ $checked = parent::$data['title_separator'];}
+                  if($this->get_option('title_separator')){ $checked = $this->get_option('title_separator');}
                   else {$checked = 'sc-pipe';}
                   foreach ($separator_options as $key=>$separator){
                      echo '<input id="'.BYTEBUNCH_SEO.'_'.$key.'" name="'.BYTEBUNCH_SEO.'[title_separator]" type="radio" value="'.$key.'" '.checked( $checked ,$key,false).' class="radio" />';
