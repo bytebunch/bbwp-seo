@@ -27,12 +27,26 @@ define('BBSEO_URL',plugins_url().'/bytebunch-seo');
 define('BBSEO_ABS',plugin_dir_path(dirname(__FILE__) ).'/bytebunch-seo');
 
 
-include_once BBSEO_ABS.'/admin/classes/bytebunch_seo.php';
-include_once BBSEO_ABS.'/admin/classes/bytebunch_seo_setting.php';
+include_once BBSEO_ABS.'/admin/classes/ByteBunchSEO.php';
+if(class_exists('ByteBunchSEO'))
+	$ByteBunchSEO = new ByteBunchSEO();
+
 
 if(is_admin()){
-   include_once BBSEO_ABS.'/admin/classes/meta_box_fields.php';
-   include_once BBSEO_ABS.'/admin/classes/taxonomy_meta_fields.php';
-}else{
-   include_once BBSEO_ABS.'/admin/classes/bytebunch_seo_core.php';
-}
+
+	include_once BBSEO_ABS.'/admin/classes/ByteBunchSEOSetting.php';
+	if(class_exists('ByteBunchSEOSetting'))
+		$ByteBunchSEOSetting = new ByteBunchSEOSetting();
+
+	include_once BBSEO_ABS.'/admin/classes/BBSEOMetaBoxFields.php';
+	if(class_exists('BBSEOMetaBoxFields'))
+		$BBSEOMetaBoxFields = new BBSEOMetaBoxFields();
+
+	include_once BBSEO_ABS.'/admin/classes/BBSEOTaxonomyMetaFields.php';
+	if(class_exists('BBSEOTaxonomyMetaFields'))
+		$BBSEOTaxonomyMetaFields = new BBSEOTaxonomyMetaFields();
+
+}else
+	include_once BBSEO_ABS.'/admin/classes/ByteBunchSEOCore.php';
+	if(class_exists('ByteBunchSEOCore'))
+		$ByteBunchSEOCore = new ByteBunchSEOCore();
