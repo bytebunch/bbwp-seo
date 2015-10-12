@@ -7,7 +7,7 @@ if(!class_exists('ByteBunchSEOSetting')){
           add_action( 'admin_menu', array($this,'add_admin_menu_pages'));
       }
 
-      public function add_admin_menu_pages(){
+      public function add_admin_menu_pages(){           
 
          /* add main menu page in wordpress dashboard */
          add_menu_page( 'ByteBunch SEO', 'ByteBunch SEO', 'manage_options', 'bbseo_dashboard', array($this,'main_admin_menu_page_content'), 'dashicons-chart-bar', 87.4);
@@ -38,10 +38,18 @@ if(!class_exists('ByteBunchSEOSetting')){
          /* // White list our options using the Settings API
           * first parameter in thsi function is database key and 2nd paramter is form input name */
           register_setting(BYTEBUNCH_SEO, BYTEBUNCH_SEO, array($this, 'validate'));
+          register_setting(BYTEBUNCH_SEO_SOCIAL, BYTEBUNCH_SEO_SOCIAL, array($this, 'validate'));
+
+          //register_setting(BYTEBUNCH_SEO_SOCIAL, BYTEBUNCH_SEO_SOCIAL, array($this, 'validate'));
       }
 
       public function validate($input) {
 
+
+        /*if(isset($input['reset_bbseo']) && $input['reset_bbseo'] && $input['reset_bbseo'] == 'yes'){
+          $this->update_db(true);
+          unset($input['reset_bbseo']);
+        }*/
         /*$valid = array();
         $valid['url_todo'] = sanitize_text_field($input['url_todo']);
         $valid['title_todo'] = sanitize_text_field($input['title_todo']);

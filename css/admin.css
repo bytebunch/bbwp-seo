@@ -33,7 +33,7 @@
 }
 .bytebunch_seo_meta_box_container div.current-content-cantainer
 {
-	
+
    padding:20px 15px 15px 15px;
    border: 1px solid #ddd;
    background-color: #FDFDFD;
@@ -53,7 +53,7 @@
 }
 .bytebunch_seo_meta_box_container ul.tabbed_menu li a
 {
-   
+
    display: block;
    margin: 0px;
    float: left;
@@ -141,7 +141,7 @@
    min-width: 0!important;
    opacity: 0;
 }
-.bytebunch_seo_container .title_separator label
+.bytebunch_seo_container .title_separator label.separator_label
 {
    float: left;
    width: 30px!important;

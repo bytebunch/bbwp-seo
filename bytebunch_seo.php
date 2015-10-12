@@ -1,28 +1,17 @@
 <?php
 /*
 Plugin Name: ByteBunch SEO
-Plugin URI: http://bytebunch.com/products/bytebunch-so
+Plugin URI: https://bytebunch.com
 Description: It's time to have a good and fast SEO plugin for wordpress.
-Version: 1.0
+Version: 0.1
 Author: Tahir
-Author URI: http://community.bytebunch.com
+Author URI: http://bytebunch.com
 License: GPL2
-
 */
-function alert($alertText)
-{
-	echo '<script type="text/javascript">';
-	echo "alert(\"$alertText\");";
-	echo "</script>";
-}
-function db($array1)
-{
-	echo "<pre>";
-	var_dump($array1);
-	echo "</pre>";
-}
+
 
 define('BYTEBUNCH_SEO','bytebunch_seo');
+define('BYTEBUNCH_SEO_SOCIAL','bytebunch_seo_social');
 define('BBSEO_URL',plugins_url().'/bytebunch-seo');
 define('BBSEO_ABS',plugin_dir_path(dirname(__FILE__) ).'/bytebunch-seo');
 
