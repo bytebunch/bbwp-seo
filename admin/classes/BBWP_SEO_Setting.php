@@ -24,11 +24,11 @@ class BBWP_SEO_Setting extends BBWP_SEO{
   }
 
   public function submenu_page_title_and_meta_content() {
-     include_once BBWP_SEO_ABS.'/admin/page_titles_and_metas.php';
+     include_once BBWP_SEO_ABS.'admin/page_titles_and_metas.php';
   }
 
   function submenu_page_social_content() {
-     include_once BBWP_SEO_ABS.'/admin/page_social.php';
+     include_once BBWP_SEO_ABS.'admin/page_social.php';
   }
 
 

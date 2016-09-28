@@ -109,10 +109,10 @@ class BBWP_SEO{
      wp_enqueue_script('uploads');
      wp_enqueue_media();
 
-     wp_register_style( BBWP_SEO.'_wp_admin_css', BBWP_SEO_URL . '/css/admin.css', false, '1.0.0' );
+     wp_register_style( BBWP_SEO.'_wp_admin_css', BBWP_SEO_URL . 'css/admin.css', false, '1.0.0' );
      wp_enqueue_style(BBWP_SEO.'_wp_admin_css');
 
-     wp_register_script( BBWP_SEO.'_wp_admin_script', BBWP_SEO_URL . '/js/admin.js', array('jquery'), '1.0.0' );
+     wp_register_script( BBWP_SEO.'_wp_admin_script', BBWP_SEO_URL . 'js/admin.js', array('jquery'), '1.0.0' );
      wp_enqueue_script( BBWP_SEO.'_wp_admin_script' );
   }
 
