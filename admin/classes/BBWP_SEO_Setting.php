@@ -24,11 +24,11 @@ class BBWP_SEO_Setting extends BBWP_SEO{
   }
 
   public function submenu_page_title_and_meta_content() {
-     include_once BBSEO_ABS.'/admin/page_titles_and_metas.php';
+     include_once BBWP_SEO_ABS.'/admin/page_titles_and_metas.php';
   }
 
   function submenu_page_social_content() {
-     include_once BBSEO_ABS.'/admin/page_social.php';
+     include_once BBWP_SEO_ABS.'/admin/page_social.php';
   }
 
 
@@ -36,10 +36,10 @@ class BBWP_SEO_Setting extends BBWP_SEO{
 
      /* // White list our options using the Settings API
       * first parameter in thsi function is database key and 2nd paramter is form input name */
-      register_setting(BYTEBUNCH_SEO, BYTEBUNCH_SEO, array($this, 'validate'));
-      register_setting(BYTEBUNCH_SEO_SOCIAL, BYTEBUNCH_SEO_SOCIAL, array($this, 'validate'));
+      register_setting(BBWP_SEO, BBWP_SEO, array($this, 'validate'));
+      register_setting(BBWP_SEO_SOCIAL, BBWP_SEO_SOCIAL, array($this, 'validate'));
 
-      //register_setting(BYTEBUNCH_SEO_SOCIAL, BYTEBUNCH_SEO_SOCIAL, array($this, 'validate'));
+      //register_setting(BBWP_SEO_SOCIAL, BBWP_SEO_SOCIAL, array($this, 'validate'));
   }
 
   public function validate($input) {
@@ -66,7 +66,7 @@ class BBWP_SEO_Setting extends BBWP_SEO{
     }
     return $valid;
     */
-    if(isset($_POST[BYTEBUNCH_SEO]) || isset($_POST[BYTEBUNCH_SEO_SOCIAL]) ){
+    if(isset($_POST[BBWP_SEO]) || isset($_POST[BBWP_SEO_SOCIAL]) ){
       update_option("bbwp_update_message",'Your settings have been update.');
     }
 

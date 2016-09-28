@@ -58,7 +58,7 @@ class BBWP_SEO_Core extends BBWP_SEO{
           $noseo = true;
         if(isset($post) && $post->post_content)
           $seo_description = $this->get_the_excerpt($post->post_content);
-        $bbseoMetaData = get_post_meta($post->ID, BYTEBUNCH_SEO, true);
+        $bbseoMetaData = get_post_meta($post->ID, BBWP_SEO, true);
         if(isset($bbseoMetaData['focuskw']) && $bbseoMetaData['focuskw'])
           $seo_keywords = $bbseoMetaData['focuskw'];
         if(isset($bbseoMetaData['metadesc']) && $bbseoMetaData['metadesc'])
@@ -101,7 +101,7 @@ class BBWP_SEO_Core extends BBWP_SEO{
        //$term_title = $term_data->name;
        if($this->get_option('noindex_'.$term_data->taxonomy))
          $noseo = true;
-       $term_seo_data = get_term_meta($term_data->term_id, BYTEBUNCH_SEO, true);
+       $term_seo_data = get_term_meta($term_data->term_id, BBWP_SEO, true);
        if($term_seo_data && isset($term_seo_data['focuskw']) && $term_seo_data['focuskw'])
          $seo_keywords = $term_seo_data['focuskw'];
        if($term_seo_data && isset($term_seo_data['desc']) && $term_seo_data['desc'])
@@ -273,7 +273,7 @@ class BBWP_SEO_Core extends BBWP_SEO{
      elseif(is_singular()){
         global $post;
         $pTitle = get_the_title($post->ID);
-        $seo_title = get_post_meta($post->ID, BYTEBUNCH_SEO, true);
+        $seo_title = get_post_meta($post->ID, BBWP_SEO, true);
         if($seo_title && isset($seo_title['title']) && $seo_title['title']){
           $title_format = $seo_title['title'];
         }else if(isset($post->post_type) && $this->get_option('title_template_'.$post->post_type)){
@@ -296,7 +296,7 @@ class BBWP_SEO_Core extends BBWP_SEO{
      else if(is_tax() || is_category() || is_tag()){
        $term_data = get_queried_object();
        $term_title = $term_data->name;
-       $term_seo_data = get_term_meta( $term_data->term_id, BYTEBUNCH_SEO, true);
+       $term_seo_data = get_term_meta( $term_data->term_id, BBWP_SEO, true);
        if($term_seo_data && isset($term_seo_data['title']) && $term_seo_data['title'])
          $title_format = $term_seo_data['title'];
        else if(isset($term_data->taxonomy) && $this->get_option('title_'.$term_data->taxonomy))

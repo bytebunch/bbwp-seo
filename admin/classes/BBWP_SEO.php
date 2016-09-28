@@ -21,13 +21,13 @@ class BBWP_SEO{
 
   public function __construct(){
 
-    self::$data = SerializeStringToArray(get_option(BYTEBUNCH_SEO));
+    self::$data = SerializeStringToArray(get_option(BBWP_SEO));
     if(!(count(self::$data) >= 1)){
       self::$data = $this->default_setting;
-      update_option(BYTEBUNCH_SEO,ArrayToSerializeString(self::$data));
+      update_option(BBWP_SEO,ArrayToSerializeString(self::$data));
     }
 
-    $BYTEBUNCH_SEO_SOCIAL = SerializeStringToArray(get_option(BYTEBUNCH_SEO_SOCIAL));
+    $BYTEBUNCH_SEO_SOCIAL = SerializeStringToArray(get_option(BBWP_SEO_SOCIAL));
     if(!(count($BYTEBUNCH_SEO_SOCIAL) >= 1))
       $BYTEBUNCH_SEO_SOCIAL = $this->default_social_setting;
     self::$data = array_merge(self::$data, $BYTEBUNCH_SEO_SOCIAL);
@@ -57,10 +57,10 @@ class BBWP_SEO{
   // update values in database
   protected function update_db($reset_option = false){
     if($reset_option == false){
-      update_option(BYTEBUNCH_SEO,ArrayToSerializeString(self::$data));
+      update_option(BBWP_SEO,ArrayToSerializeString(self::$data));
     }else{
-      update_option(BYTEBUNCH_SEO, ArrayToSerializeString($this->default_setting));
-      update_option(BYTEBUNCH_SEO_SOCIAL, ArrayToSerializeString($this->default_social_setting));
+      update_option(BBWP_SEO, ArrayToSerializeString($this->default_setting));
+      update_option(BBWP_SEO_SOCIAL, ArrayToSerializeString($this->default_social_setting));
       self::$data = $this->default_setting;
     }
   }
@@ -109,11 +109,11 @@ class BBWP_SEO{
      wp_enqueue_script('uploads');
      wp_enqueue_media();
 
-     wp_register_style( BYTEBUNCH_SEO.'_wp_admin_css', BBSEO_URL . '/css/admin.css', false, '1.0.0' );
-     wp_enqueue_style(BYTEBUNCH_SEO.'_wp_admin_css');
+     wp_register_style( BBWP_SEO.'_wp_admin_css', BBWP_SEO_URL . '/css/admin.css', false, '1.0.0' );
+     wp_enqueue_style(BBWP_SEO.'_wp_admin_css');
 
-     wp_register_script( BYTEBUNCH_SEO.'_wp_admin_script', BBSEO_URL . '/js/admin.js', array('jquery'), '1.0.0' );
-     wp_enqueue_script( BYTEBUNCH_SEO.'_wp_admin_script' );
+     wp_register_script( BBWP_SEO.'_wp_admin_script', BBWP_SEO_URL . '/js/admin.js', array('jquery'), '1.0.0' );
+     wp_enqueue_script( BBWP_SEO.'_wp_admin_script' );
   }
 
   protected function get_the_excerpt($string, $charLimit = 150, $readmore = ' ...'){
