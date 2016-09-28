@@ -4,12 +4,13 @@
   }*/
 ?>
 <div class="wrap bytebunch_seo_container"><div id="icon-tools" class="icon32"></div>
+<?php BBWPUpdateErrorMessage(); ?>
 <form method="post" action="options.php">
   <!-- <form method="post" action=""> -->
       <?php
         settings_fields(BYTEBUNCH_SEO_SOCIAL);
        ?>
-      <h2>Social - ByteBunch SEO</h2>
+      <h2>Social - BBWP SEO</h2>
       <ul class="tabbed_menu">
          <li><a href="#bytebunch_seo_tab1">Facebook</a></li>
          <li><a href="#bytebunch_seo_tab2">Twitter</a></li>

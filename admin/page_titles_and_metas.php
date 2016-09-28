@@ -8,13 +8,14 @@
   }
 ?>
 <div class="wrap bytebunch_seo_container"><div id="icon-tools" class="icon32"></div>
+<?php BBWPUpdateErrorMessage(); ?>
 <form method="post" action="options.php">
   <!-- <form method="post" action=""> -->
       <?php
        settings_fields(BYTEBUNCH_SEO);
        //db($this);
        ?>
-      <h2> Titles & Metas - ByteBunch SEO </h2>
+      <h2> Titles & Metas - BBWP SEO </h2>
       <ul class="tabbed_menu">
          <li><a href="#bytebunch_seo_tab1">Home Page</a></li>
          <li><a href="#bytebunch_seo_tab2">Post Types</a></li>
@@ -246,7 +247,7 @@
                   'sc-gt' => '>',
                   );
                   if($this->get_option('title_separator')){ $checked = $this->get_option('title_separator');}
-                  else {$checked = 'sc-pipe';}
+                  else {$checked = 'sc-dash';}
                   foreach ($separator_options as $key=>$separator){
                      echo '<input id="'.BYTEBUNCH_SEO.'_'.$key.'" name="'.BYTEBUNCH_SEO.'[title_separator]" type="radio" value="'.$key.'" '.checked( $checked ,$key,false).' class="radio" />';
                      echo '<label for="'.BYTEBUNCH_SEO.'_'.$key.'" class="separator_label">'.$separator.'</label>';
